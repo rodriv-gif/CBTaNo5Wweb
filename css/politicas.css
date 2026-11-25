@@ -1,0 +1,389 @@
+/* Colores de la guia de estilos */
+:root {
+    --green-main: #0f5132;
+    --green-medium: #2e7d58;
+    --green-dark: #0a3d26;
+    --green-success: #1f6b47;
+    --green-soft: #e6f4ec;
+    --blue-accent: #1e3a8a;
+    --gray-light: #f5f7f6;
+    --text-main: #212121;
+    --text-muted: #4b5563;
+    --border-card: #e5e7eb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-main);
+    background-color: var(--gray-light);
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+h3 {
+    font-weight: 500;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+/* ---------- Botones ---------- */
+.btn-brand-outline,
+.btn-brand-light {
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 8px 20px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-brand-light {
+    background-color: #ffffff;
+    color: var(--green-main);
+    border: 1.5px solid #ffffff;
+}
+.btn-brand-light:hover {
+    background-color: var(--green-soft);
+    color: var(--green-main);
+}
+.btn-brand-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+}
+.btn-brand-outline:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 20px;
+    border: 1.5px solid var(--green-main);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--green-main);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn-back:hover {
+    background-color: var(--green-soft);
+    color: var(--green-main);
+}
+
+.btn-brand-light:focus-visible,
+.btn-brand-outline:focus-visible,
+.btn-back:focus-visible,
+.nav-link:focus-visible {
+    outline: 3px solid var(--blue-accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Encabezado ---------- */
+.site-header {
+    background-color: var(--green-main);
+    min-height: 92px;
+}
+.brand-logo {
+    height: 58px;
+    width: auto;
+}
+.brand-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+.brand-sub {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.site-header .nav-link {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+.site-header .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+.site-header .nav-link.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Contenido ---------- */
+.page-block {
+    padding: 40px 0 64px 0;
+}
+
+.breadcrumb-line {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.breadcrumb-line a {
+    color: var(--green-main);
+    font-weight: 500;
+    text-decoration: none;
+}
+.breadcrumb-line a:hover {
+    text-decoration: underline;
+}
+
+.page-title {
+    font-size: clamp(1.7rem, 3.2vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--green-main);
+    margin: 14px 0 10px 0;
+}
+.page-lead {
+    font-size: 15.5px;
+    color: var(--text-muted);
+    max-width: 760px;
+    margin: 0;
+}
+
+/* indice lateral */
+.index-card {
+    position: sticky;
+    top: 24px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 18px;
+}
+.index-card h2 {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--green-main);
+    margin-bottom: 10px;
+}
+.index-card .nav-link {
+    display: flex;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+.index-card .nav-link span {
+    width: 18px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.index-card .nav-link:hover {
+    background-color: var(--gray-light);
+}
+.index-card .nav-link.active {
+    background-color: var(--green-soft);
+    color: var(--green-main);
+    font-weight: 500;
+}
+
+/* secciones de las politicas */
+.policy-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    scroll-margin-top: 24px;
+}
+.policy-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+.policy-number {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--green-main);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.policy-head h2 {
+    font-size: 18px;
+    color: var(--green-main);
+    margin: 0;
+}
+.policy-card p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.policy-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.policy-list li {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.policy-list li:last-child {
+    margin-bottom: 0;
+}
+.policy-list .icon {
+    color: var(--green-main);
+    width: 17px;
+    height: 17px;
+    margin-top: 4px;
+}
+
+.update-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: var(--green-soft);
+    border: 1px solid #bfd9cb;
+    border-radius: 12px;
+    padding: 16px 22px;
+    font-size: 13.5px;
+    color: #4b5563;
+}
+.update-box strong {
+    display: block;
+    color: var(--green-main);
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .site-header .navbar-collapse {
+        padding-bottom: 12px;
+    }
+    .index-card {
+        position: static;
+    }
+}
+
+/* ---------- Ajustes generales ---------- */
+.container {
+    max-width: 1260px;
+}
+.site-header {
+    min-height: 76px;
+}
+.site-header .brand-logo,
+.brand-logo {
+    height: 52px;
+}
+.brand-name {
+    font-size: 16px;
+}
+.brand-sub {
+    font-size: 11px;
+}
+.site-header .nav-link {
+    font-size: 13px;
+    padding: 6px 10px;
+}
+.site-header .btn {
+    min-height: 36px;
+    padding: 5px 14px;
+    font-size: 13px;
+}
+.btn-brand,
+.btn-brand-light,
+.btn-brand-outline {
+    min-height: 38px;
+    font-size: 14px;
+}
+.hero {
+    padding: 40px 0 90px 0;
+}
+.hero-title {
+    font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+}
+.hero-text {
+    font-size: 15px;
+}
+.hero-books {
+    height: 64px;
+}
+.today-card {
+    padding: 20px;
+}
+.section-block {
+    padding: 44px 0;
+}
+.section-title {
+    font-size: 24px;
+}
+.section-subtitle {
+    font-size: 14px;
+}
+.info-card {
+    padding: 20px;
+}
+.icon-circle {
+    width: 44px;
+    height: 44px;
+}
+.step-number {
+    width: 38px;
+    height: 38px;
+}
+.cta-band {
+    padding: 32px 0;
+}
+.login-info {
+    padding: 64px 0;
+}
+.login-info-content {
+    padding-left: max(28px, calc((100vw - 1260px) / 2 + 12px));
+}
+.info-title {
+    font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+}
+.info-text {
+    font-size: 15px;
+}
