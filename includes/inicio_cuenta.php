@@ -1,5 +1,7 @@
 <?php
 // Inicio común de las páginas de Mi cuenta. La página define antes: $titulo, $subtitulo, $icono y $pagina_activa.
+require_once __DIR__ . "/utiles.php";
+require_once __DIR__ . "/bd.php";
 ?>
 <!doctype html>
 <html lang="es">
@@ -37,3 +39,6 @@
                         <p class="text-secondary mb-0"><?= $subtitulo ?></p>
                     </div>
                 </div>
+
+                <?php include __DIR__ . "/mensajes.php"; ?>
+

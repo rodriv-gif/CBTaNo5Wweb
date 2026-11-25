@@ -1,0 +1,23 @@
+/* Pantalla de Ayuda del lector */
+.help-title {
+    color: var(--green-main);
+}
+.accordion-item {
+    border: 1px solid var(--border-card);
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.accordion-button {
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #ffffff;
+    color: var(--text-main);
+}
+/* Respeta los saltos de línea que escribe el bibliotecario en la respuesta */
+.accordion-body {
+    white-space: pre-line;
+}
