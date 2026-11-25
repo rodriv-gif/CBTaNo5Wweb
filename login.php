@@ -177,7 +177,7 @@ $texto_info = "Entra con tu matrícula o clave para consultar el catálogo, rese
             </div>
         </main>
 
-        <?php include "includes/footer.php"; ?> //se manda a llamar el footer
+        <?php include "includes/footer.php"; ?> 
         <script src="./js/ver_password.js"></script>
     </body>
 </html>
