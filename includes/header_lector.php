@@ -7,7 +7,14 @@ $menu = [
     "catalogo.php" => "Catálogo",
     "ayuda.php" => "Ayuda",
 ];
-$nombre_lector = htmlspecialchars($_SESSION["nombre"] ?? "[Nombre del lector]");
+$nombre_lector = htmlspecialchars($_SESSION["nombre"] ?? "Lector");
+
+// Número rojo de la campana y etiqueta Alumno / Trabajador
+require_once __DIR__ . "/../config/conexion.php";
+require_once __DIR__ . "/consultas_lector.php";
+$es_lector_ahora = ($_SESSION["tipo"] ?? "") === "lector";
+$avisos_nuevos = $es_lector_ahora ? contar_avisos_nuevos($pdo) : 0;
+$tipo_lector = $es_lector_ahora ? tipo_de_lector() : "Invitado";
 ?>
 <header class="site-header d-flex align-items-center">
     <nav class="navbar navbar-expand-lg w-100 py-0">
@@ -34,14 +41,16 @@ $nombre_lector = htmlspecialchars($_SESSION["nombre"] ?? "[Nombre del lector]");
                 </ul>
 
                 <div class="d-flex align-items-center gap-3 text-white">
-                    <a href="mi_cuenta.php" class="position-relative text-white" aria-label="2 avisos nuevos">
+                    <a href="mis_avisos.php" class="position-relative text-white" aria-label="<?= $avisos_nuevos ?> avisos nuevos">
                         <svg class="icon" style="width: 24px; height: 24px"><use href="#i-bell" /></svg>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger bell-badge">2</span>
+                        <?php if ($avisos_nuevos > 0): ?>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger bell-badge"><?= $avisos_nuevos ?></span>
+                        <?php endif; ?>
                     </a>
                     <span class="d-flex align-items-center gap-2">
                         <svg class="icon"><use href="#i-user" /></svg> <?= $nombre_lector ?>
                     </span>
-                    <span class="tag tag-ok">Alumno</span>
+                    <span class="tag tag-ok"><?= $tipo_lector ?></span>
                     <a href="logout.php" class="btn btn-brand-outline">
                         <svg class="icon"><use href="#i-log-out" /></svg> Cerrar sesión
                     </a>

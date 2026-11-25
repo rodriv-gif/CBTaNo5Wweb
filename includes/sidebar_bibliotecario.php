@@ -68,6 +68,11 @@ if ($idBiblioSesion > 0 && isset($conexion)) {
                 </a>
             </li>
             <li>
+                <a href="ayuda_admin.php" class="<?= $pagina_activa === 'ayuda_admin.php' ? 'active' : '' ?>">
+                    <svg class="icon"><use href="#i-info" /></svg> Ayuda del lector
+                </a>
+            </li>
+            <li>
                 <a href="datos_biblioteca.php" class="<?= $en_datos ? 'parent-active' : '' ?>">
                     <svg class="icon"><use href="#i-building" /></svg> Datos de la biblioteca
                     <svg class="icon chevron"><use href="<?= $en_datos ? '#i-chevron-down' : '#i-chevron-right' ?>" /></svg>
